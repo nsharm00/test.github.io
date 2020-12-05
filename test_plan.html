@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Campus Population Map</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Top box -->
+        <!-- Logo & Site Name -->
+        <div class="placeholder">
+            <div class="parallax-window" data-parallax="scroll" data-image-src="img/background.jpg">
+                <div class="tm-header">
+                    <div class="row tm-header-inner">
+                        <div class="col-12">
+                            <img src="img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
+                            <div class="tm-site-text-box">
+                                <h1 class="tm-site-title">Project 2</h1>
+                                <h6 class="tm-site-description">Presented by Arjuna Sondhi, Matt Hardner and Naveen Sharma</h6>
+                            </div>
+                        </div>
+                        <nav class="tm-nav">
+                            <ul class="tm-nav-ul">
+                                <li class="tm-nav-li"><a href="index.html" class="tm-nav-link">Test Scope</a></li>
+                                <li class="tm-nav-li"><a href="test_plan.html" class="tm-nav-link active">Test Plan</a></li>
+                                <li class="tm-nav-li"><a href="test_procedure.html" class="tm-nav-link">Test Procedure for Build</a></li>
+                                <li class="tm-nav-li"><a href="validation.html" class="tm-nav-link">Validation Tests</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <header class="row tm-welcome-section">
+                <h2 class="col-12 text-center tm-section-title">Test Plan</h2>
+
+                <p class="col-12 text-left">Introducing and creating a test plan in the early stage of the application will provide the guarantee that we achieved quality when we launch the project with no or minimal bugs. Delivery Drone project.<br><br> The system has been designed
+                    using modular architecture. A modular architecture means assembling a collection of smaller functional blocks, which makes for a system assembled with a specific purpose in mind. One of the advantages of a modular architecture for
+                    test systems is the ability to custom-build the system to fit your exact measurement criteria, which is harder to do with traditional benchtop instrumentation. <br><br> In the modularization test technique test cases are broken down
+                    into logical, manageable functions or modules. These modules are isolated to create independent tests and they can later be reused or combined with other tests to create complex in-depth test scenarios. Test cases can be referenced
+                    in other test cases to create nested reusable structures. As a result, there's less maintenance effort because by updating the corresponding module all test cases reusing it are also updated in one go. <br><br> For the test plan, crucial
+                    modules will be implemented and tested first. Modules will be tested independently and the system will be tested after the modules are integrated. Some functionality can only be tested by the collaboration and parallel execution of
+                    different modules integrated together. <br><br> Benefits of this approach will be that: <br><br>1. It is easier to identity errors in independent modules as it will be easier to manage data flows and the testing tasks will be smaller
+                    <br> 2. Some functionalities of modules will be dependent on the interaction between modules and this can be tested after the modules are integrated into the system <br> 3. Since initially modules can will be developed and tested independently,
+                    we can work parallely on the development of modules to speed up development <br> 4. Reusability <br><br> We will conduct our tests in four phases. <br><br> Phase 1 - Control Module <br> In this phase we will conduct testing on the
+                    control module and it's functionality which can be tested independently. <br><br> Phase 2 - Feedback Module <br> In this phase we will conduct testing on the feedback module and it's functionality which can be tested independently.
+                    <br><br> Phase 3 - Hardware <br> In this phase we will conduct testing on the hardware for the system and make sure that the hardware components all work as expected individually. One might not consider this as “software testing” but
+                    this is an important step before integrating the control module, feedback module and the hardware. Once we can verify that the hardware is functioning then if there were hardware issues or errors once it was integrated with the other
+                    modules, we will know that the likely cause is because of the integration/software. If this step is avoided, a cause for a hardware error could be hardware malfunction and the team might waste time thinking that the problem was software
+                    related. <br><br> Phase 4 - Integrating the Control, Feedback and Hardware modules <br> In this phase we will integrate the control module, the feedback module and the hardware module. We will test the functionalities of each module
+                    which depends on the collaboration and exchange of information between the modules. The system will be tested to make sure that it is functioning as intended and that the integration was successful. <br><br>
+                </p>
+
+
+            </header>
+        </main>
+
+        <footer class="tm-footer text-center">
+            <p>Project 2 Website | CS 5744 Software Design & Quality</p>
+        </footer>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle click on paging links
+            $('.tm-paging-link').click(function(e) {
+                e.preventDefault();
+
+                var page = $(this).text().toLowerCase();
+                $('.tm-gallery-page').addClass('hidden');
+                $('#tm-gallery-page-' + page).removeClass('hidden');
+                $('.tm-paging-link').removeClass('active');
+                $(this).addClass("active");
+            });
+        });
+    </script>
+</body>
+
+</html>

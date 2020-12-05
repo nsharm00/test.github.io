@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Campus Population Map</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Top box -->
+        <!-- Logo & Site Name -->
+        <div class="placeholder">
+            <div class="parallax-window" data-parallax="scroll" data-image-src="img/background.jpg">
+                <div class="tm-header">
+                    <div class="row tm-header-inner">
+                        <div class="col-12">
+                            <img src="img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
+                            <div class="tm-site-text-box">
+                                <h1 class="tm-site-title">Project 2</h1>
+                                <h6 class="tm-site-description">Presented by Arjuna Sondhi, Matt Hardner and Naveen Sharma</h6>
+                            </div>
+                        </div>
+                        <nav class="tm-nav">
+                            <ul class="tm-nav-ul">
+                                <li class="tm-nav-li"><a href="index.html" class="tm-nav-link">Test Scope</a></li>
+                                <li class="tm-nav-li"><a href="test_plan.html" class="tm-nav-link">Test Plan</a></li>
+                                <li class="tm-nav-li"><a href="test_procedure.html" class="tm-nav-link active">Test Procedure for Build</a></li>
+                                <li class="tm-nav-li"><a href="validation.html" class="tm-nav-link">Validation Tests</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <header class="row tm-welcome-section">
+                <h2 class="col-12 text-center tm-section-title">Test Procedure for Build</h2>
+
+                <p class="col-12 text-left"> Phase 1 - Control Module <br> In this module, mainly there are four subsystems that we need to perform integration testing <br> </p>
+                <ul class="para-list">
+                    <li> Data Exchange System: In this test , first it will perform the check whether the system is able to start and transmit the signals. In the second test, the procedure will be to check whether the drone is able to receive the signal.
+                        Third, we will test whether all the signals have been properly saved into internal storage by reading the data from storage. These tests will confirm that exchange of data to the drone by the signal and that saving the data to
+                        internal storage is working as expected. These all test cases will be executed by a mock server, which will help us to simulate the responses accordingly.</li>
+                    <li>Gateway to update control variables: In this layer, the test case will confirm that the drone is able to access the storage system data to take appropriate action regarding flight information. For example, where it needs to go to deliver
+                        by accessing the way points information internal storage. Also, test cases will validate that if the system is able to pass control variables in downstream processes(feedback system) to take the appropriate action. Performance
+                        is the key here because if the system is not getting populated in lower latency, the drone will not be able to reach the destination at time. So, executing performance test is crucial</li>
+                    <li>Battery optimization: In the build, procedure will make sure and confirm that all different levels of battery thresholds have been tested to make sure that the drone is sending the right variables and signal back to the system. Stubs
+                        will be used to test different states of the system. Also, the processing speed perspective will conduct the testing to check signal transmission is not getting affected by low battery levels.
+                    </li>
+                    <li>Track current location: This is the most important part of the control module because if the system is not able to track drones, it can be lost which will impact business as well as customer experience. Test cases will ensure that
+                        the drone is landed successfully. Other test cases will ensure that it has mapping to each waypoint to reach its destination. Moreover, the test case will also ensure that the feedback module also gets the location of the Drone.
+                        Test cases will be executed by setting up the test and mock data in the server so the different scenarios can be tested.
+                    </li>
+                </ul>
+
+                <p>
+                    <br> Phase 2: Feedback Module <br> The feedback module testing will be verifying the correctness and timeliness of the three variables. <br>
+                </p>
+                <ul class="para-list">
+                    <li>Speed: Verify the speed is being evaluated correctly using accelerometer, IMU sensor signals, and GPS. The feedback system will need to constantly check and correct against the speed variable.
+                    </li>
+                    <li> Heading/Direction: The gyroscope, GPS, and IMU will be used to test that the direction is correct. The drift of the direction will be measured to ensure it stays within an acceptable margin of error and the feedback loop is correcting
+                        in an ideal timeframe.
+                    </li>
+                    <li>Altitude: The barometer, gyroscope, and GPS will be used to test the correct altitude. Altitude will be measured similarly to heading, acceptable margin will be taken into account.
+                    </li>
+                </ul>
+
+                <p>
+                    <br>Phase 3: Hardware
+                </p>
+                <ul class="para-list">
+                    <li>Engine: Run engine tests to see if the engine works in isolation and can provide the desired power required for the drone.
+                    </li>
+                    <li>Rotors: Run rotor tests to see if they start, turn off, and work as intended. Check if rotor RPM is as desired
+                    </li>
+                    <li>Rotational equipment: Run hardware test for rotating equipment.
+                    </li>
+                    <li>Package Carrying Component: Run tests on package carrying components to see if it can carry packages in isolation. If the package carrying component can carry packages whose weight is equal to the maximum load then the test will pass.
+                    </li>
+                    <li>Battery: Test if battery is able to charge and discharge successfully. The drones will need a certain amount of charge from the battery. If the batteries are able to provide this amount of power at the rate for the maximum expected
+                        flight time then they will have passed the test. If they cannot meet these requirements, new batteries will need to be obtained.
+                    </li>
+                    <li>Internal Memory: Test if internal memory hardware can store/retrieve data independently. This could be done by connecting it to a computer and checking if it works with a computer. The data transfer of the internal memory will be tested
+                        by sending data between a computer and the internal memory chip. If the sent data is received uncorrupted then the internal memory will have passed the test.
+                    </li>
+                    <li>Accelerometer: Test accelerometer by running landscape/portrait test. Accelerometer can be connected to a computer for this test. If changes in orientation are detected then the test passes.
+                    </li>
+                    <li>Temperature sensors: Test if temperature sensors can detect correct temperature in isolation by placing in hot areas and recording the temperature.
+                    </li>
+                    <li>GPS: Test GPS sensors and system by checking the results and ensuring that they are accurate. Sensors could be moved outside and the results could be checked to see if the location of the sensor gets updated.
+                    </li>
+                </ul>
+                <br><br>
+                <p>
+                    Phase 4 - Integrating the Control, Feedback and Hardware modules <br> This is the final phase of the testing before we deploy the code to production. In this phase, we will run End to End testing also called Behavioral driven testing(BDD).
+                    Critical test cases will be selected and automated in this phase. Mock server, stubs and dummy test data will not be used in this phase. Limited number of important test cases will be executed by using the actual real time data with
+                    actual Drone, station, waypoint etc. Important test cases that will be tested here are mentioned below:
+                    <br>
+                </p>
+                <ul class="para-list">
+                    <li>Drone should able to start the engine by signal and deliver small package from A to B successfully
+                    </li>
+                    <li>Drone should able to send signal back to control module its destination and lands safely when battery level is lower than certain configured threshold
+                    </li>
+                    <li>Drone should avoid traffic collisions when two drones are approaching each other. Control module should receive the signal, feedback should send a signal to the drone to change the altitude to avoid traffic collision. Tests will be
+                        considered passed if control modules and feedback loop received proper signal from the drone.
+                    </li>
+                </ul>
+            </header>
+        </main>
+
+        <footer class="tm-footer text-center">
+            <p>Project 2 Website | CS 5744 Software Design & Quality</p>
+        </footer>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle click on paging links
+            $('.tm-paging-link').click(function(e) {
+                e.preventDefault();
+
+                var page = $(this).text().toLowerCase();
+                $('.tm-gallery-page').addClass('hidden');
+                $('#tm-gallery-page-' + page).removeClass('hidden');
+                $('.tm-paging-link').removeClass('active');
+                $(this).addClass("active");
+            });
+        });
+    </script>
+</body>
+
+</html>

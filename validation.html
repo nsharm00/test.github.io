@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Campus Population Map</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Top box -->
+        <!-- Logo & Site Name -->
+        <div class="placeholder">
+            <div class="parallax-window" data-parallax="scroll" data-image-src="img/background.jpg">
+                <div class="tm-header">
+                    <div class="row tm-header-inner">
+                        <div class="col-12">
+                            <img src="img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
+                            <div class="tm-site-text-box">
+                                <h1 class="tm-site-title">Project 2</h1>
+                                <h6 class="tm-site-description">Presented by Arjuna Sondhi, Matt Hardner and Naveen Sharma</h6>
+                            </div>
+                        </div>
+                        <nav class="tm-nav">
+                            <ul class="tm-nav-ul">
+                                <li class="tm-nav-li"><a href="index.html" class="tm-nav-link">Test Scope</a></li>
+                                <li class="tm-nav-li"><a href="test_plan.html" class="tm-nav-link">Test Plan</a></li>
+                                <li class="tm-nav-li"><a href="test_procedure.html" class="tm-nav-link">Test Procedure for Build</a></li>
+                                <li class="tm-nav-li"><a href="validation.html" class="tm-nav-link active">Validation Tests</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <header class="row tm-welcome-section">
+                <h2 class="col-12 text-center tm-section-title">Validation Tests</h2>
+
+                <p>Validation test is the critical stage in testing plan as it needs to be fully test ed according to the business requirements and based on the user needs. Functional and non-functional requirements must be fully covered in the validation
+                    test which will cover the critical functionalities of the system. In case, if any deviation has been encountered, it needs to be monitored and resolved as priority 1 bug. There are several third party vendor tools available to test
+                    this such as Selenium, HP quality center etc. UAT testing that is performed by a client is also part of the validation testing phase as well. After all these test cases passed, the application goes to production.
+                </p>
+                <h3 class="col-12 text-left">Validation Test Table</h3>
+
+                <table id="frTable">
+                    <thead>
+                        <tr>
+                            <th><strong>Test Case #</strong></th>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Test Description</strong></th>
+                            <th><strong>Requirement #</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>VTC-1</strong></td>
+                            <td>
+                                Turn on/off the system
+                            </td>
+                            <td>
+                                The system turns on and turns off successfully
+                                <td>FR-1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-2</strong></td>
+                            <td>
+                                Memory access when system is off
+                            </td>
+                            <td>
+                                Turn the system off and check if the system is trying to receive/store delivery instructions. Test is successful if the system does not allow memory access when turned off.
+                            </td>
+                            <td>NFR-6</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-3</strong></td>
+                            <td>
+                                Receive delivery information from control system
+                            </td>
+                            <td>
+                                Control system will send signals to the drone along with the delivery information, way point info, landing and way back to docking station info.
+                            </td>
+                            <td>
+                                FR-2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-4</strong></td>
+                            <td>
+                                Take a flight
+                            </td>
+                            <td>
+                                Send a start command to the motors and check if they start rotating and the drone commences flight
+                            </td>
+                            <td>
+                                FR-4
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-5</strong></td>
+                            <td>
+                                Motion check
+                            </td>
+                            <td>
+                                Verify if system can alter motor speeds, turn off motor, and activate directional equipment to direct the drone
+                            </td>
+                            <td>
+                                FR-7, FR-14
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-6</strong></td>
+                            <td>
+                                Retrieving waypoint information
+                            </td>
+                            <td>
+                                Make sure data structures in onboard memory can store waypoint and location information
+                            </td>
+                            <td>
+                                FR-3, FR-8, NFR-2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-7</strong></td>
+                            <td>
+                                Determine the destination reached
+                            </td>
+                            <td>
+                                System will keep comparing the current waypoint information to the destination waypoint info. If it matched, it will consider the destination reached.
+                            </td>
+                            <td>
+                                FR-5, FR-6
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-8</strong></td>
+                            <td>
+                                Trigger landing
+                            </td>
+                            <td>
+                                Pre set landing info will be retrieved from the memory and send message to transmitted to execute landing gear and land drone
+                            </td>
+                            <td>
+                                FR-9, FR-13, NFR-2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-9</strong></td>
+                            <td>
+                                Release package
+                            </td>
+                            <td>
+                                Control module first checks whether the drone has successfully landed. Then the control system sends a signal and the package will be released from the drone and the signal will be sent back to the system.
+                            </td>
+                            <td>
+                                FR-10
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-10</strong></td>
+                            <td>
+                                Take action when battery level is down
+                            </td>
+                            <td>
+                                Control module continuously monitors battery level, if it is below a certain threshold, pre-set landing instruction executed and the drone safely lands on earth.
+                            </td>
+                            <td>
+                                FR-9, FR-12
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-11</strong></td>
+                            <td>
+                                Safely back to the docking station
+                            </td>
+                            <td>
+                                Once package release, drone use same waypoints to return to docking station
+                            </td>
+                            <td>
+                                FR-11
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-12</strong></td>
+                            <td>
+                                Security Check
+                            </td>
+                            <td>
+                                Make sure the system can communicate with a cloud server on a secure connection. Try to gain access to system communication, if it is easy to access then communication protocol needs to be changed to make it more secure
+                            </td>
+                            <td>
+                                NFR-1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-13</strong></td>
+                            <td>
+                                Upgradability
+                            </td>
+                            <td>
+                                Verify modular design and scalability of components by making sure modules only communicate when needed and can be developed independently
+                            </td>
+                            <td>
+                                NFR-5, NFR-7, NFR-9
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>VTC-14</strong></td>
+                            <td>
+                                Documentation
+                            </td>
+                            <td>
+                                Verify sufficient documentation for code, check if readme files are included for each module
+                            </td>
+                            <td>
+                                NFR-4
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Traceability Matrix</h3>
+                <br>
+                <img src="img/traceability_matrix.png" id="traceabilityMatrix" alt="traceability_matrix">
+            </header>
+        </main>
+
+        <footer class="tm-footer text-center">
+            <p>Project 2 Website | CS 5744 Software Design & Quality</p>
+        </footer>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle click on paging links
+            $('.tm-paging-link').click(function(e) {
+                e.preventDefault();
+
+                var page = $(this).text().toLowerCase();
+                $('.tm-gallery-page').addClass('hidden');
+                $('#tm-gallery-page-' + page).removeClass('hidden');
+                $('.tm-paging-link').removeClass('active');
+                $(this).addClass("active");
+            });
+        });
+    </script>
+</body>
+
+</html>

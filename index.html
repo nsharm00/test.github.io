@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Campus Population Map</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Top box -->
+        <!-- Logo & Site Name -->
+        <div class="placeholder">
+            <div class="parallax-window" data-parallax="scroll" data-image-src="img/background.jpg">
+                <div class="tm-header">
+                    <div class="row tm-header-inner">
+                        <div class="col-12">
+                            <img src="img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
+                            <div class="tm-site-text-box">
+                                <h1 class="tm-site-title">Project 2</h1>
+                                <h6 class="tm-site-description">Presented by Arjuna Sondhi, Matt Hardner and Naveen Sharma</h6>
+                            </div>
+                        </div>
+                        <nav class="tm-nav">
+                            <ul class="tm-nav-ul">
+                                <li class="tm-nav-li"><a href="index.html" class="tm-nav-link active">Test Scope</a></li>
+                                <li class="tm-nav-li"><a href="test_plan.html" class="tm-nav-link">Test Plan</a></li>
+                                <li class="tm-nav-li"><a href="test_procedure.html" class="tm-nav-link">Test Procedure for Build</a></li>
+                                <li class="tm-nav-li"><a href="validation.html" class="tm-nav-link">Validation Tests</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <header class="row tm-welcome-section">
+                <h2 class="col-12 text-center tm-section-title">Test Scope</h2>
+
+                <p class="col-12 text-left">Project Name: Delivery Drone
+                    <br> Quality of a software project depends on the project testing strategy. There are multiple testing strategies in the industry to choose from; however some parts of the strategy are kept the same, such as unit testing, Integration
+                    testing, validation/regression testing, End to End testing, to name a few. In this project, we are going to evaluate and understand the design of the “Delivery Drone” project and publish the testing strategy plan from the Integration
+                    testing (build and procedure) and validation testing stand point.
+                    <br><br> To provide some background, let’s understand what we are trying to achieve in this project. In simple words, integration testing covers and tests the scenarios regarding all the integration points of the project such as the
+                    API calls to third party services, the interaction with databases etc. Basically, there are two types of integration testing, “Integration testing with Network” and “Integration testing with Functional”. Integration testing with Network
+                    focuses on testing all the external calls that your application is making using wiremock etc. On other hand, Integration testing with Functional focus on testing all the business logic of the application with the mock server, test
+                    doubles, etc. <br><br> Validation testing is focused on the assertion side of it, whether the application is behaving as expected and as mentioned in the requirements. Many ways and tools are present to perform validation testing such
+                    as Selenium, Soap UI etc. <br><br> In this project, we are going to cover three main aspects of the application(mentioned below). Each module or phase will be divided into subsections and will cover system functionality, business functionality
+                    and performance functionalities. <br><br> Following system components and their related features are considered to be in scope for testing: <br> 1. Control Module: control module that monitors system parameters and accesses internal
+                    memory to obtain instructions. <br> 2. Feedback Module: feedback control systems that control altitude, speed, direction by comparing current information from onboard sensors against the control variable(s) received from the control
+                    module. <br> 3. Hardware Module: Contains the objects representing the physical components of the drone that are activated, adjusted, and deactivated by the feedback control systems (Engine, Rotors, Rotational equipment, Package Carrying
+                    Component). Also contains additional hardware components like accelerometer, temperature sensors, GPS, internal memory, internal sensors, and the drone battery, etc. <br><br>
+
+                </p>
+            </header>
+        </main>
+
+        <footer class="tm-footer text-center">
+            <p>Project 2 Website | CS 5744 Software Design & Quality</p>
+        </footer>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle click on paging links
+            $('.tm-paging-link').click(function(e) {
+                e.preventDefault();
+
+                var page = $(this).text().toLowerCase();
+                $('.tm-gallery-page').addClass('hidden');
+                $('#tm-gallery-page-' + page).removeClass('hidden');
+                $('.tm-paging-link').removeClass('active');
+                $(this).addClass("active");
+            });
+        });
+    </script>
+</body>
+
+</html>
